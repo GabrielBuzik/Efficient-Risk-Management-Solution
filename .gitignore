@@ -1,0 +1,6 @@
+__pycache__/
+*.png
+tester.py
+MonteCarlo_Pac/__pycache__/
+doc/**/*.pyc
+report.docx
