@@ -28,9 +28,9 @@ pip install pandas-datareader
 
 Then log returns are calculated and we are ready to estimate distribution parameters.
 
-*Example of logs distribution(SIL=F):*
+*Example of logs distribution(EURUSD=X):*
 
-!!!!!ADD PICTURE!!!!!
+![Log Returns](https://github.com/GabrielBuzukashvili/Efficient-Risk-Management-Solution/blob/main/Examples/EURUSD_log_returns.png)
 
 
 ### Step II
