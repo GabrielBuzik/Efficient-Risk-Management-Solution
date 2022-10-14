@@ -1,5 +1,7 @@
 __pycache__/
-*.png
+fig.png
+hedging_absence_distribution.png
+hedging_presence_distribution.png
 tester.py
 MonteCarlo_Pac/__pycache__/
 doc/**/*.pyc

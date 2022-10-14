@@ -4,7 +4,7 @@ import matplotlib.pyplot as plt
 import scipy 
 from scipy import stats
 
-def lognormal_simulation(current_stock_price,mean,st_deviation,steps=365,num_of_sim=5000):
+def lognormal_simulation(current_stock_price,mean,st_deviation,steps=365,num_of_sim=10000):
 	"Classical Wienear process"
 
 	#Simulate Standard Normal random variables
@@ -20,7 +20,7 @@ def lognormal_simulation(current_stock_price,mean,st_deviation,steps=365,num_of_
 	return simulation
 
 def lognormal_uniform_jump_diffusion_simulation(current_stock_price,mean,
-	st_deviation,left_ubound,right_ubound,poisson_rate,steps=365,num_of_sim=5000):
+	st_deviation,left_ubound,right_ubound,poisson_rate,steps=365,num_of_sim=10000):
 	"Lognormal distribution with Uniform Jump Diffusion"
 
 	#Simulate Poisson random variables
@@ -40,7 +40,7 @@ def lognormal_uniform_jump_diffusion_simulation(current_stock_price,mean,
 
 	return simulation
 
-def loglaplace_simulation(current_stock_price,location,diversity,steps=365,num_of_sim=5000):
+def loglaplace_simulation(current_stock_price,location,diversity,steps=365,num_of_sim=10000):
 	"Simulation of asset price movement using Laplace simulation"
 
 	#Log of division has a laplace distribution and we get an array of logs of division
@@ -57,7 +57,7 @@ def loglaplace_simulation(current_stock_price,location,diversity,steps=365,num_o
 
 	return simulation
 
-def loglaplace_simulation_uniform_jump_diffusion(current_stock_price,location,diversity,left_ubound,right_ubound,poisson_rate,steps=365,num_of_sim=5000):
+def loglaplace_simulation_uniform_jump_diffusion(current_stock_price,location,diversity,left_ubound,right_ubound,poisson_rate,steps=365,num_of_sim=10000):
 	"Simulation of asset price movement using Laplace simulation plus Jump Process"
 
 	#Simulate Poisson random variables
@@ -91,7 +91,7 @@ def cauchy_simulation(current_stock_price,location,scale,steps=365,num_of_sim=10
 	simulation = division_cauchy.cumprod(axis = 0)
 	return simulation
 
-def hypersecant_simulation(current_stock_price,location,scale,steps=365,num_of_sim=5000):
+def hypersecant_simulation(current_stock_price,location,scale,steps=365,num_of_sim=10000):
 
 	hypersecant = scipy.stats.hypsecant.rvs(location,scale,size= (num_of_sim,steps)).T
 

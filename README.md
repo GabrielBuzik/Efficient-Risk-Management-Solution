@@ -80,10 +80,10 @@ Now there are **four** hedging strategies available. Each involves using derivat
 
 Strategies:
 
-+ Forward Contract (sets a fixed payment price)
-+ Free Collar Contract(sets upper and lower price bounds)
-+ Call Option (a price-bound option that establishes an upper price bound when purchasing an asset).
-+ Put Option (a price-bound option that establishes a lower price bound when selling an asset)
++ __[Forward Contract](https://en.wikipedia.org/wiki/Forward_contract)__ (sets a fixed payment price)
++ __[Free Collar Contract](https://www.investopedia.com/terms/c/collar-agreement.asp)__(sets upper and lower price bounds)
++ __[Call Option](https://en.wikipedia.org/wiki/Call_option)__ (a price-bound option that establishes an upper price bound when purchasing an asset).
++ __[Put Option](https://en.wikipedia.org/wiki/Put_option)__ (a price-bound option that establishes a lower price bound when selling an asset)
 
 A hedging strategy is to be used for each cashflow.
 
