@@ -47,6 +47,11 @@ Now there are 6 distributions of log daily returns available for the user to sel
 + Hypersecant distribution
 + Cauchy distribution
 
+Let us represent 10,000 motions graphically for EURUSD in case of Normal distributions with Jump:
+
+![Motions](https://github.com/GabrielBuzukashvili/Efficient-Risk-Management-Solution/blob/main/Examples/EURUSD_simulation.png)
+
+
 ### Step III
 ### At this point the user should provide the cashflows that involve buying or selling the asset estimated during a future period(*one year*)
 
@@ -67,9 +72,9 @@ All provided information is saved. Plus, given the date provided and price motio
 
 The distribution at the given date can be the following:
 
-*Suppose we want to buy 100'000 EUR for USD in 60 days and daily log returns are distributed ...*
+*Suppose we want to buy 100'000 EUR for USD in 60 days and daily log returns are distributed Normally with Jump Diffusion. In case of no hedging the payment distribution looks as follows:*
 
-!!!!ADD PICTURE!!!!
+![Cashflow distribution](https://github.com/GabrielBuzukashvili/Efficient-Risk-Management-Solution/blob/main/Examples/EURUSD_no_hedge.png)
 
 ### Step IV
 ### At this step, the user should choose a hedging strategy for each cashflow
@@ -87,9 +92,9 @@ Strategies:
 
 A hedging strategy is to be used for each cashflow.
 
-*The new distribution of the cashflow from step III after implementing a collar is the following:*
+*The new distribution of the cashflow from step III after implementing a collar with bounds [0.93,1.02] is the following:*
 
-!!!!!ADD PICTURE!!!!!
+![Cashflow distribution_Collar](https://github.com/GabrielBuzukashvili/Efficient-Risk-Management-Solution/blob/main/Examples/EURUSD_hedge.png)
 
 ### Step V
 ### Now the program provides you with a .doxc report, comparing the distribution of your total payments during the period.
