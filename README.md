@@ -104,7 +104,7 @@ Thus, with the collar contract the largest ammount we will pay in 60 days for 10
 
 Using the report, you can draw a conclusion about the effectiveness of the chosen hedging strategy as well as compare the risks to the case of no hedging.
 
-This is an example of a report: report
+This is an example of a report: __[report](https://github.com/GabrielBuzukashvili/Efficient-Risk-Management-Solution/blob/main/Examples/EURUSD_report.docx)__ 
 
 
 
