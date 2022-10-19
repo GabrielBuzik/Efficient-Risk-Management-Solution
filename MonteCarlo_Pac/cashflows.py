@@ -91,7 +91,7 @@ class CashFlow:
 			if self.distribution[i] <= strike:
 				self.distribution[i] = strike
 				self.cashflow_value_distribution = self.distribution * self.ammount
-		self.hed_strat = 'Call option ' + str(strike)
+		self.hed_strat = 'Put option ' + str(strike)
 
 		print('Option is set')
 

@@ -64,6 +64,12 @@ def report(distribution_chosen,mc_simulation,csh_flw,ticker,total_dist_no_hedgin
 	document.add_heading('Hedging implemented',level = 1)
 
 	#Table 3 with hedging
+	total_dist_with_hedging.sort()
+	var5 = total_dist_with_hedging[int(len(total_dist_with_hedging)*0.05)]
+	var5 = format(var5,'.4f')
+	var1 = total_dist_with_hedging[int(len(total_dist_with_hedging)*0.01)]
+	var1 = format(var1,'.4f')
+
 	table3 = document.add_table(rows=4, cols=2)
 	table3.cell(0,0).text = 'The worst total value of CFs'
 	table3.cell(0,1).text = str(format(min(total_dist_with_hedging),'.4f'))
@@ -71,14 +77,48 @@ def report(distribution_chosen,mc_simulation,csh_flw,ticker,total_dist_no_hedgin
 	table3.cell(1,0).text = 'The best total value of CFs'
 	table3.cell(1,1).text = str(format(max(total_dist_with_hedging),'.4f'))
 
-	table3.cell(2,0).text = 'Proportion of bad cases avoided'
-	table3.cell(2,1).text = str(100*(total_dist_with_hedging == min(total_dist_with_hedging)).sum()/len(total_dist_with_hedging)) + '%'
+	table3.cell(2,0).text = 'VaR 1%'
+	table3.cell(2,1).text = str(var1)
 
-	table3.cell(3,0).text = 'Proportion of good cases avoided'
-	table3.cell(3,1).text = str(100*(total_dist_with_hedging == max(total_dist_with_hedging)).sum()/len(total_dist_with_hedging)) + '%'
+	table3.cell(3,0).text = 'VaR 5%'
+	table3.cell(3,1).text = str(var5)
 
 	#Plot distribution for better wisualization
 	document.add_heading('Plot of total CashFlow value distribution WITH HEDGING',level = 2)
 	document.add_picture('hedging_presence_distribution.png')
+
+	#Table 4: effect of the hedging strategy
+	table4 = document.add_table(rows=4, cols=2)
+
+	min_value = min(total_dist_with_hedging)
+	bad_cases_avoided = 0
+
+	for i in total_dist_no_hedging:
+		if i < min_value:
+			bad_cases_avoided += 1
+		else:
+			pass
+
+	max_value = max(total_dist_with_hedging)
+	good_cases_avoided = 0
+
+	for i in total_dist_no_hedging:
+		if i > max_value:
+			good_cases_avoided += 1
+		else:
+			pass
+
+	table4.cell(0,0).text = 'Proportion of bad cases avoided'
+	table4.cell(0,1).text = str( 100 * bad_cases_avoided / len(total_dist_with_hedging) ) + '%'
+
+	table4.cell(1,0).text = 'Proportion of good cases avoided'
+	table4.cell(1,1).text = str( 100 * good_cases_avoided / len(total_dist_with_hedging) ) + '%'
+
+	table4.cell(2,0).text = 'Worst case difference'
+	table4.cell(2,1).text = str( abs(min_value - min(total_dist_no_hedging)) )
+
+	table4.cell(3,0).text = 'Best case difference'
+	table4.cell(3,1).text = str( abs(max_value - min(total_dist_no_hedging)) )
+
 
 	document.save('report.docx')

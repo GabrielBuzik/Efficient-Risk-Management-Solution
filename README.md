@@ -38,7 +38,7 @@ Then log returns are calculated and we are ready to estimate distribution parame
 
 At this stage the programe estimates parameters of daily returns distribution chosen by the user. Maximum Likelihood estimation method is applied.
 
-Now there are 6 distributions of log daily returns available for the user to select:
+Now there are **six** distributions of log daily returns available for the user to select:
 
 + Normal distribution(*classical approach*)
 + Normal distribution with Uniform Jump Diffusion(*simulates rare outliers, that are often underestimanted*)
@@ -81,7 +81,7 @@ The distribution at the given date can be the following:
 
 Given a hedging strategy, the distribution of a cashflow as well as the total distribution of cashflow values will alter.
 
-Now there are **four** hedging strategies available. Each involves using derivative instruments. Also, the user should be informed about the prices of those derivatives. The best pricing is provided by Bloomberg services. Or the company should ask any investment bank for indicative pricing.
+Now there are **four** hedging strategies available. Each involves using **derivative instruments**. Also, the user should be informed about the prices of those derivatives. The best pricing is provided by **Bloomberg services**. Or the company should ask any **investment bank** for indicative pricing.
 
 Strategies:
 
@@ -95,6 +95,9 @@ A hedging strategy is to be used for each cashflow.
 *The new distribution of the cashflow from step III after implementing a collar with bounds [0.93,1.02] is the following:*
 
 ![Cashflow distribution_Collar](https://github.com/GabrielBuzukashvili/Efficient-Risk-Management-Solution/blob/main/Examples/EURUSD_hedge.png)
+
+
+Thus, with the collar contract the largest ammount we will pay in 60 days for 100,000 is **102,000 USD**, the lowest ammount is **93,000 USD**. We have hedged from **5.42%** of bad outcomes( paying from **102,000** to **112,072 USD**) assuming **10,000 motions** of price. The price of risk elimination is **19.01%** of better cases given up( when we pay from **81,732** to **93,000 USD**).
 
 ### Step V
 ### Now the program provides you with a .doxc report, comparing the distribution of your total payments during the period.
