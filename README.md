@@ -9,7 +9,7 @@ Companies whose businesses require buying and selling currency, commodities, or 
 
 **The purpose of this project is to help a company answer all these questions or ,more precisely speaking, let it have a clear vision on the effect of implementing any strategy on the total distribution of its future cashflow values. This would help to select a strategy wisely as well as to justify potential need for hedging.**
 
-The program studies the history of returns of a given asset, then uses Monte Carlo simulation of returns during a future period with different statistical distributions and parameters, estimated specifically for the asset. This simulation is used to estimate the distribution of total payments during the year given the cashflows of a company with and without applying hedging to those cashflows.
+The program analyses the history of returns for a given asset and estimates parameters for a chosen statistical distribution of daily returns. Then runs a 10'000 simulations of the future value using Monte Carlo approach. Given all cashflow and hedging instruments of the company(user input), this simulation estimates the total distribution of future payments during the year with and without hedging. At the end of this simulation a .docx document is returned.
 
 ## General discription of all steps
 ___
