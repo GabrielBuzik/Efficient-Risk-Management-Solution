@@ -1,4 +1,5 @@
 # Efficient Risk Management Solution
+##Install
 ## Intro
 ___
 Companies whose businesses require buying and selling currency, commodities, or other assets at a market price **are subject to the risk of losing significant amounts of money** due to undesirable fluctuations in that price. The most reasonable solution for these enterprises is to reduce or eliminate the risk by using **hedging strategies**. This leads to reasonable questions:
